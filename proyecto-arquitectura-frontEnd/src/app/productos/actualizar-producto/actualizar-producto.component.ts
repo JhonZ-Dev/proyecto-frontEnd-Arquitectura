@@ -75,7 +75,7 @@ export class ActualizarProductoComponent {
     Swal.fire({
       icon: 'success',
       title: 'Éxito',
-      text: 'Formulario validado correctamente. ¡Puedes continuar!',
+      text: 'Formulario actualizado correctamente. ¡Puedes continuar!',
       confirmButtonText: 'Aceptar' // Cambia el texto del botón Aceptar según tus necesidades
     }).then((result) => {
       if (result.isConfirmed) {
