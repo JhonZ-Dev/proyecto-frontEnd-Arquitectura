@@ -30,12 +30,15 @@ export class ActualizarProductoComponent {
     })
   }
   actualizarProducto(){
-    this.servicio.actualizarProductos(this.id,this.producto).subscribe({
-      next:(datos)=>{
-        //redigir a ora página
-       // this.irPagina();
-      }
-    })
+    if(this.validarFormulario()){
+      this.servicio.actualizarProductos(this.id,this.producto).subscribe({
+        next:(datos)=>{
+          //redigir a ora página
+         // this.irPagina();
+        }
+      })
+    }
+    
   };
 
   //redirigir
