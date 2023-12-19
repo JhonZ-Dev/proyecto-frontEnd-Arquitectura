@@ -27,7 +27,9 @@ export class GuardarMovimientoComponent implements OnInit{
   public guardarMovimientos(){
     if(this.validarFormulario()){
       this.service.guardarMovimientos(this.producto_id, this.movimientos).subscribe({
-        next:(datos)=>{this.irListaMovimientos()}
+        next:(datos)=>{
+          //this.irListaMovimientos()
+        }
       })
 
     }
@@ -40,7 +42,7 @@ export class GuardarMovimientoComponent implements OnInit{
 
   validarFormulario() {
     // Validación de solo texto en el campo nombre
-  
+    
     // Validación de campos vacíos
     if (!this.movimientos.cantidad || !this.movimientos.fecha_movimiento || !this.movimientos.tipo_movimiento) {
       Swal.fire({
@@ -53,7 +55,11 @@ export class GuardarMovimientoComponent implements OnInit{
   
     // Resto de la lógica si el formulario es válido
     // ...
-  
+    const soloNumerosRegex = /^\d+$/;
+    if (!soloNumerosRegex.test(String(this.movimientos.cantidad))) {
+      Swal.fire('Error', 'La capacidad solo debe contener números', 'error');
+      return;
+    }
     // Alerta de éxito
     Swal.fire({
       icon: 'success',
