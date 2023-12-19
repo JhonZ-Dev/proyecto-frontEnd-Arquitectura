@@ -33,7 +33,7 @@ export class ActualizarProductoComponent {
     this.servicio.actualizarProductos(this.id,this.producto).subscribe({
       next:(datos)=>{
         //redigir a ora página
-        this.irPagina();
+       // this.irPagina();
       }
     })
   };
@@ -73,12 +73,17 @@ export class ActualizarProductoComponent {
       icon: 'success',
       title: 'Éxito',
       text: 'Formulario validado correctamente. ¡Puedes continuar!',
-      
-
+      confirmButtonText: 'Aceptar' // Cambia el texto del botón Aceptar según tus necesidades
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirige a otra página después de hacer clic en Aceptar
+        this.router.navigate(['/productos']); // Reemplaza '/otra-pagina' con la ruta de la página a la que deseas redirigir
+      }
     });
   
     return true;
   }
+
 
 
 }
