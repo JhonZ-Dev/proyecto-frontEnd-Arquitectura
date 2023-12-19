@@ -22,6 +22,11 @@ export class ProductosComponent implements OnInit,OnDestroy {
   productos:Productos[];
 
   ngOnInit(){
+    this.dtOptions = {
+      language: {
+        url: "/assets/Spanish.json"
+      },
+    };
     this.listarProductos();
   }
 
@@ -30,7 +35,8 @@ export class ProductosComponent implements OnInit,OnDestroy {
     this.service.listarProductos().subscribe((data)=>{
       this.data = data;
       console.log(data);
-      this.dtTrigger.next(data)
+      this.dtTrigger.next(this.dtOptions)
+      this.dtTrigger.unsubscribe(); // Desactivar DataTables
 
       
     })
