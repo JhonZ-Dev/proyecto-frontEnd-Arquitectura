@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="container text-center" style="margin: 30px;">
+        <h1>Sistema de inventario</h1>
+
+
+
+    </div>
+    <br>
+    <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Fecha Movimiento</th>
+                <th scope="col">Tipo Movimiento</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movimientos of data">
+                <th scope="row">{{movimientos.id}}</th>
+                <td>{{movimientos.cantidad}}</td>
+                <td>{{movimientos.fecha_movimiento | date}}</td>
+                <td>{{movimientos.tipo_movimiento}}</td>
+                <td class="text-center">
+                    <div>
+                        <td><a [routerLink]="['/editar-movimientos/',movimientos.id]">Editar</a></td>
+                        <button (click)="eliminarMovimientos(movimientos.id)" class="btn btn-warning btn-sm me-3">Eliminar</button>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    
+</body>
+</html>

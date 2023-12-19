@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="container text-center" style="margin: 30px;">
+        <h1>Sistema de inventario</h1>
+
+        <a class="btn btn-light btn-sm me-3"  [routerLink]="['/guardar-producto']"> Guardar Producto</a>
+        <td><a class="btn btn-dark btn-sm me-3" [routerLink]="['/detalles']">Detalles</a></td>
+
+
+    </div>
+    <br>
+    <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Existencia</th>
+                <th scope="col">Asignar Movimientos Inventarios</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of data">
+                <th scope="row">{{producto.id}}</th>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.stock}}</td>
+                <td><a class="btn btn-secondary btn-sm me-3" [routerLink]="['/guardar-movimientos/',producto.id]">Movimiento Inventario</a></td>
+                <td class="text-center">
+                    <div>
+                        <td><a class="btn btn-warning btn-sm me-3" [routerLink]="['/editar-productos/',producto.id]">Editar</a></td>
+                        
+                        <td><button (click)="eliminarProducto(producto.id)" class="btn btn-danger btn-sm me-3">Eliminar</button></td>
+                       
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    
+</body>
+</html>

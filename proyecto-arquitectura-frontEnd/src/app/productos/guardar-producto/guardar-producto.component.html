@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+
+    <!-- Agregar enlaces a Bootstrap y FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+
+    
+    <h1>Registrar un Nuevo Producto</h1>
+    <div class="container mt-5 form-container">
+        <div class="form-wrapper">
+            <form (ngSubmit)="guardarProducto()" class="p-4 border rounded">
+                <div class="form-group">
+                    <label for="nombre"><strong>Nombre Producto</strong></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="bi bi-shop"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="productos.nombre">
+    
+                    </div> 
+                    
+                </div>
+    
+                <div class="form-group">
+                    <label for="precio"><strong>Precio Prodcuto</strong></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" style="width: 50%;" class="form-control" name="precio" id="precio" [(ngModel)]="productos.precio">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="stock"><strong>Existencia Actuales</strong></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="bi bi-123"></i></span>
+                        </div>
+                        <input type="number" class="form-control" name="stock" id="stock" [(ngModel)]="productos.stock">
+    
+                    </div>
+                </div>
+    
+                
+    
+                <button type="submit" class="btn btn-primary"><i class="bi bi-floppy-fill"></i></button>
+    
+            </form>
+        </div>
+        <div class="image-wrapper">
+            <!-- Aquí puedes agregar tu imagen -->
+            <img src="../../../assets/monophy.gif" alt="Imagen" class="img-fluid">
+        </div>
+        
+    </div>
+
+
+
+    <!-- Agregar scripts de Bootstrap y FontAwesome (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Categoria</title>
+
+    <!-- Agregar enlaces a Bootstrap y FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <h1>Guardar Categoria</h1>
+    <div class="container mt-5">
+       
+        <div class="row">
+            <div class="col-md-6">
+                <form (ngSubmit)="guardarCategoria()">
+                    <div class="form-group">
+                        <label for="nombre"><strong>Nombre Categoria</strong></label>
+                        <input type="text" class="form-control" name="nombre" [(ngModel)]="categorias.nombre">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <!-- Aquí puedes agregar tu imagen -->
+                <img src="../../../assets/sisinv.jpg" alt="Imagen" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregar scripts de Bootstrap y FontAwesome (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

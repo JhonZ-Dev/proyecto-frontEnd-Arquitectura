@@ -1,0 +1,20 @@
+<div class="modal" [ngClass]="{'mostrar': mostrarFormulario}">
+    <div class="modal-contenido">
+      <h2>Formulario de Contacto</h2>
+      <form action="/procesar-formulario" method="post">
+        <!-- Campos del formulario -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+              
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+              
+        <!-- Otros campos del formulario -->
+              
+        <input type="submit" value="Enviar">
+      </form>
+      <button class="cerrar-modal" (click)="mostrarFormulario = false">Cerrar</button>
+    </div>
+  </div>
+  <button class="mostrar-modal" (click)="mostrarFormulario = true">Mostrar Formulario</button>
+  

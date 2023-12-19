@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+<div class="container">
+    <div class="container text-center" style="margin: 30px;">
+        <h1>Sistema de inventario</h1>
+
+       
+
+
+    </div>
+    <br>
+    <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of data">
+                <th scope="row">{{producto.id_producto}}</th>
+                <td>{{producto.categoria_nombre}}</td>
+                <td>{{producto.producto_nombre}}</td>
+                
+                <td class="text-center">
+                    <div>
+                       
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    
+</body>
+</html>
