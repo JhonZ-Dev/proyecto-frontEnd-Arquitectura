@@ -33,4 +33,12 @@ export class MovimientoService {
     return this.htmovimiento.delete(this.url+"movimiento_inventario/"+id)
   }
 
+  //traerPorId
+  
+  //metodo para traerPorId
+    // Método para obtener un producto por ID
+    public obtenerPorId(id: number): Observable<Movimiento> {
+      return this.htmovimiento.get<Movimiento>(this.url + "movimiento_inventario/" + id);
+    }
+
 }
