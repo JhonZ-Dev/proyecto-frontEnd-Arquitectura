@@ -54,6 +54,13 @@ export class GuardarProductoComponent {
     // Resto de la lógica si el formulario es válido
     // ...
   
+    // Alerta de éxito
+    Swal.fire({
+      icon: 'success',
+      title: 'Éxito',
+      text: 'Formulario validado correctamente. ¡Puedes continuar!',
+    });
+  
     return true;
   }
 
