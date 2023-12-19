@@ -12,31 +12,30 @@
     <div class="container text-center" style="margin: 30px;">
         <h1>Sistema de inventario</h1>
 
-       
+        <a class="btn btn-light btn-sm me-3"  [routerLink]="['/guardar-producto']"> Guardar Producto</a>
+        <td><a class="btn btn-dark btn-sm me-3" [routerLink]="['/detalles']">Detalles</a></td>
 
 
     </div>
     <br>
-    <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <table class="table table-bordered"  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <thead class="table-dark">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th>
-               
+                
+                
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let producto of data">
-                <th scope="row">{{producto.id_producto}}</th>
-                <td>{{producto.categoria_nombre}}</td>
-                <td>{{producto.producto_nombre}}</td>
-                
-                <td class="text-center">
-                    <div>
-                       
-                    </div>
-                </td>
+                <th scope="row">{{producto.id}}</th>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.precio}}</td>
+            
+                <td><a class="btn btn-secondary btn-sm me-3" [routerLink]="['/guardar-movimientos/',producto.id]">Movimiento Inventario</a></td>
+            
             </tr>
         </tbody>
     </table>
