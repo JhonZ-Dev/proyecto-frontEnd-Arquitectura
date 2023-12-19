@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Productos } from '../productos';
 import { ProductosServicesService } from '../productos-services.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-producto',
@@ -41,5 +42,43 @@ export class ActualizarProductoComponent {
   irPagina(){
     this.router.navigate(["/productos"])
   }
+
+  validarFormulario() {
+    // Validación de solo texto en el campo nombre
+    const soloTextoRegex = /^[a-zA-Z\s]+$/;
+    if (!soloTextoRegex.test(this.producto.nombre)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El campo de nombre solo puede contener letras y espacios.',
+      });
+      return false;
+    }
+  
+    // Validación de campos vacíos
+    if (!this.producto.nombre || !this.producto.precio || !this.producto.stock) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, completa todos los campos correctamente.',
+      });
+      return false;
+    }
+  
+    // Resto de la lógica si el formulario es válido
+    // ...
+  
+    // Alerta de éxito
+    Swal.fire({
+      icon: 'success',
+      title: 'Éxito',
+      text: 'Formulario validado correctamente. ¡Puedes continuar!',
+      
+
+    });
+  
+    return true;
+  }
+
 
 }
