@@ -15,15 +15,19 @@ export class ActualizarProductoComponent {
 
   constructor(private servicio:ProductosServicesService, private actived: ActivatedRoute, private router:Router){}
 
-  ngOnInit(){
-    this.actived.paramMap.subscribe((params)=>{
+  ngOnInit() {
+    this.actived.paramMap.subscribe((params) => {
       const id = params.get("id");
-      if(id !==null){
-       this.id = +id 
+      if (id !== null) {
+        this.id = +id;
+
+        // Obtener los datos del producto por el ID y asignarlos al modelo
+        this.servicio.obtenerProductoPorId(this.id).subscribe((producto) => {
+          this.producto = producto;
+        });
       }
     })
   }
-
   actualizarProducto(){
     this.servicio.actualizarProductos(this.id,this.producto).subscribe({
       next:(datos)=>{
