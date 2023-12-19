@@ -21,7 +21,7 @@ export class GuardarProductoComponent {
       this.service.guardarProducto(this.productos).subscribe({
         next:(datos)=>{
           //ir a la pagina
-          this.irPagina();
+          //this.irPagina();
           console.log(datos)
         }
       })
@@ -59,6 +59,12 @@ export class GuardarProductoComponent {
       icon: 'success',
       title: 'Éxito',
       text: 'Formulario validado correctamente. ¡Puedes continuar!',
+      confirmButtonText: 'Aceptar' // Cambia el texto del botón Aceptar según tus necesidades
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirige a otra página después de hacer clic en Aceptar
+        this.router.navigate(['/productos']); // Reemplaza '/otra-pagina' con la ruta de la página a la que deseas redirigir
+      }
     });
   
     return true;
