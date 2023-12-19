@@ -119,3 +119,12 @@
         transform: translateY(0);
     }
 }
+
+.table-dark {
+    color: #000;
+    background-color: #fffffff1;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border: #00000040;
+}
