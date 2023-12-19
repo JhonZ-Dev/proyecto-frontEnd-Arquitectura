@@ -34,8 +34,8 @@
                 <td>{{movimientos.tipo_movimiento}}</td>
                 <td class="text-center">
                     <div>
-                        <td><a [routerLink]="['/editar-movimientos/',movimientos.id]">Editar</a></td>
-                        <button (click)="eliminarMovimientos(movimientos.id)" class="btn btn-warning btn-sm me-3">Eliminar</button>
+                        <td><a class="btn btn-warning btn-sm me-3" [routerLink]="['/editar-movimientos/',movimientos.id]">Editar</a></td>
+                       <td><button (click)="eliminarMovimientos(movimientos.id)" class="btn btn-danger btn-sm me-3">Eliminar</button></td> 
 
                     </div>
                 </td>
