@@ -32,5 +32,12 @@ export class ProductosServicesService {
     return this.httproductos.delete(this.url+"producto/"+id);
   }
 
+  //metodo para traerPorId
+    // Método para obtener un producto por ID
+    public obtenerProductoPorId(id: number): Observable<Productos> {
+      return this.httproductos.get<Productos>(this.url + "producto/" + id);
+    }
+  
+
 
 }
