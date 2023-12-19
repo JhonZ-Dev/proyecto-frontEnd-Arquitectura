@@ -21,7 +21,7 @@ export class GuardarProductoComponent {
       this.service.guardarProducto(this.productos).subscribe({
         next:(datos)=>{
           //ir a la pagina
-
+          this.irPagina();
           console.log(datos)
         }
       })
@@ -58,6 +58,7 @@ export class GuardarProductoComponent {
   }
 
   irPagina(){
+    this.router.navigate(['/productos']);
 
   }
 
