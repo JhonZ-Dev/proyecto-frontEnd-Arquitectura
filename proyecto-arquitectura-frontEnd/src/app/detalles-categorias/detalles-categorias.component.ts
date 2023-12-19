@@ -17,8 +17,11 @@ export class DetallesCategoriasComponent implements OnInit,OnDestroy {
 
   constructor(private service:DetallesService){}
   ngOnInit() {
-    this.dtOptions = {
-      pagingType: 'full_numbers', // o cualquier otra configuración que necesites
+      this.dtOptions = {
+      language: {
+        url: "/assets/Spanish.json"
+      },
+      pagingType: 'full_numbers', 
     };
     this.obtenerPorductos2();
   }
@@ -28,7 +31,7 @@ export class DetallesCategoriasComponent implements OnInit,OnDestroy {
     .subscribe((data)=>{
       this.data=data;
     console.log(data);
-    this.dtTrigger.next(data)})
+    this.dtTrigger.next(this.dtOptions)})
   }
 
   
