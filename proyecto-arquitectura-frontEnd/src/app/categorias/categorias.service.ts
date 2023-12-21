@@ -11,6 +11,7 @@ export class CategoriasService {
 
   constructor(private httpCategoria:HttpClient) { }
   url="http://localhost:3000/api/"
+  //http://10.41.1.159/
 
   //metodo para guardar
   public guardarCategoria(categoria:Categorias):Observable<Object>{
