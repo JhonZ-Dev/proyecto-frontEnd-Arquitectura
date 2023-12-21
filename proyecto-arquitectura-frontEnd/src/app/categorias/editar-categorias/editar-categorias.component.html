@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
 
-    <h1>Guardar Categoria</h1>
-    <form (ngSubmit)="editarCategorias()">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" [(ngModel)]="categoria.nombre">
-        <button type="submit">Editar</button>
+    <!-- Incluye la biblioteca Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+
+    <h1 class="mt-4">Guardar Categoría</h1>
+    <form (ngSubmit)="editarCategorias()" class="mt-4">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" [(ngModel)]="categoria.nombre" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
     </form>
-    
+
+    <!-- Incluye la biblioteca Bootstrap JS y Popper.js (si es necesario) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
